@@ -45,12 +45,10 @@ four: $(wildcard *.o)
 
 См. в этих разделах примеры его использования:
 
-#### !!! Необходимы ссылки ниже
-
 * [Статические правила шаблона](neobychnye-pravila.md#staticheskie-pravila-shablona)
 * [Правила шаблона](neobychnye-pravila.md#pravila-shablona)
-* Замена строки
-* Директива vpath
+* [Замена строки](funkcii.md#zamena-stroki)
+* [Директива vpath](drugie-osobennosti.md#direktiva-vpath)
 
 ## Автоматические переменные
 
