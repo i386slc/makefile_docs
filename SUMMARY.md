@@ -14,3 +14,4 @@
   * [Условная часть Makefiles](uchebniki/izuchaem-makefile/uslovnaya-chast-makefiles.md)
   * [Функции](uchebniki/izuchaem-makefile/funkcii.md)
   * [Другие особенности](uchebniki/izuchaem-makefile/drugie-osobennosti.md)
+  * [Makefile Cookbook](uchebniki/izuchaem-makefile/makefile-cookbook.md)
