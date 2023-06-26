@@ -12,3 +12,4 @@
   * [Команды и выполнение](uchebniki/izuchaem-makefile/komandy-i-vypolnenie.md)
   * [Переменные (часть 2)](uchebniki/izuchaem-makefile/peremennye-chast-2.md)
   * [Условная часть Makefiles](uchebniki/izuchaem-makefile/uslovnaya-chast-makefiles.md)
+  * [Функции](uchebniki/izuchaem-makefile/funkcii.md)
