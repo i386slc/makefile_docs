@@ -9,3 +9,4 @@
   * [Цели (targets)](uchebniki/izuchaem-makefile/celi-targets.md)
   * [Автоматические переменные и подстановочные знаки (wildcards)](uchebniki/izuchaem-makefile/avtomaticheskie-peremennye-i-podstanovochnye-znaki-wildcards.md)
   * [Необычные правила](uchebniki/izuchaem-makefile/neobychnye-pravila.md)
+  * [Команды и выполнение](uchebniki/izuchaem-makefile/komandy-i-vypolnenie.md)
