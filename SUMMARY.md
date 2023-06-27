@@ -15,3 +15,10 @@
   * [Функции](uchebniki/izuchaem-makefile/funkcii.md)
   * [Другие особенности](uchebniki/izuchaem-makefile/drugie-osobennosti.md)
   * [Makefile Cookbook](uchebniki/izuchaem-makefile/makefile-cookbook.md)
+
+## Документации
+
+* [Справка Git](dokumentacii/spravka-git/README.md)
+  * [Получение и создание проектов](dokumentacii/spravka-git/poluchenie-i-sozdanie-proektov/README.md)
+    * [init](dokumentacii/spravka-git/poluchenie-i-sozdanie-proektov/init.md)
+    * [clone](dokumentacii/spravka-git/poluchenie-i-sozdanie-proektov/clone.md)
