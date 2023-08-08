@@ -193,14 +193,115 @@ python -m twine upload --repository <source_name> dist/<package_file>
 
 ### Установка на уровне проекта
 
+Чтобы установить последнюю версию пакета, используйте следующую команду:
+
+```bash
+pip install\
+--index-url https://<personal_access_token_name>:<personal_access_token>@gitlab.example.com/api/v4/projects/<project_id>/packages/pypi/simple\
+--no-deps <package_name>
+```
+
+* `<package_name>` — это название пакета.
+* `<personal_access_token_name>` — это название токена личного доступа с областью действия **read\_api**.
+* `<personal_access_token>` — это токен личного доступа с областью действия **read\_api**.
+* `<project_id>` — это либо [URL-адрес](https://docs.gitlab.com/ee/api/rest/index.html#namespaced-path-encoding) проекта (например, `group%2Fproject`), либо идентификатор проекта (например, **42**).
+
+В этих командах вы можете использовать `--extra-index-url` вместо `--index-url`. Однако использование `--extra-index-url` делает вас уязвимыми для атак с путаницей зависимостей, потому что он проверяет наличие пакета в репозитории PyPi перед проверкой пользовательского репозитория. `--extra-index-url` добавляет указанный URL-адрес в качестве дополнительного реестра, который клиент проверяет на наличие пакета. `--index-url` указывает клиенту проверять наличие пакета только по указанному URL-адресу.
+
+Если вы следовали руководству и хотите установить пакет **MyPyPiPackage**, вы можете запустить:
+
+```bash
+pip install mypypipackage --no-deps\
+--index-url https://<personal_access_token_name>:<personal_access_token>@gitlab.example.com/api/v4/projects/<your_project_id>/packages/pypi/simple
+```
+
+Это сообщение указывает на то, что пакет был успешно установлен:
+
+```
+Looking in indexes: https://<personal_access_token_name>:****@gitlab.example.com/api/v4/projects/<your_project_id>/packages/pypi/simple
+Collecting mypypipackage
+  Downloading https://gitlab.example.com/api/v4/projects/<your_project_id>/packages/pypi/files/d53334205552a355fee8ca35a164512ef7334f33d309e60240d57073ee4386e6/mypypipackage-0.0.1-py3-none-any.whl (1.6 kB)
+Installing collected packages: mypypipackage
+Successfully installed mypypipackage-0.0.1
+```
+
 ### Установка с уровня группы
+
+Чтобы установить последнюю версию пакета из группы, используйте следующую команду:
+
+```bash
+pip install\
+--index-url https://<personal_access_token_name>:<personal_access_token>@gitlab.example.com/api/v4/groups/<group_id>/-/packages/pypi/simple\
+--no-deps <package_name>
+```
+
+В этой команде:
+
+* `<package_name>` — это название  пакета.
+* `<personal_access_token_name>` — это название токена личного доступа с областью действия read\_api.
+* `<personal_access_token>` — это токен личного доступа с областью действия read\_api.
+* `<group_id>` — это идентификатор группы.
+
+В этих командах вы можете использовать `--extra-index-url` вместо `--index-url`. Однако использование `--extra-index-url` делает вас уязвимыми для атак с путаницей зависимостей, потому что он проверяет наличие пакета в репозитории PyPi перед проверкой пользовательского репозитория. `--extra-index-url` добавляет указанный URL-адрес в качестве дополнительного реестра, который клиент проверяет на наличие пакета. `--index-url` указывает клиенту проверять наличие пакета только по указанному URL-адресу.
+
+Если вы следуете руководству и хотите установить пакет **MyPyPiPackage**, вы можете запустить:
+
+```bash
+pip install mypypipackage --no-deps\
+--index-url https://<personal_access_token_name>:<personal_access_token>@gitlab.example.com/api/v4/groups/<your_group_id>/-/packages/pypi/simple
+```
 
 ### Имена пакетов
 
+GitLab ищет пакеты, использующие [нормализованные имена Python (PEP-503)](https://www.python.org/dev/peps/pep-0503/#normalized-names). Символы `-`, `_` и `.` все обрабатываются одинаково, а повторяющиеся символы удаляются.
+
+Запрос `pip install` для `my.package` ищет пакеты, которые соответствуют любому из трех символов, таких как `my-package`, `my_package` и `my....package`.
+
 ## Использование requirements.txt
+
+Если вы хотите, чтобы **pip** имел доступ к вашему личному реестру, добавьте параметр `--extra-index-url` вместе с URL-адресом вашего реестра в файл `requirements.txt`.
+
+```python
+--extra-index-url https://gitlab.example.com/api/v4/projects/<project_id>/packages/pypi/simple
+package-name==1.0.0
+```
+
+Если это частный реестр, вы можете пройти аутентификацию несколькими способами. Например:
+
+* Используя ваш файл `requirements.txt`:
+
+```python
+--extra-index-url https://__token__:<your_personal_token>@gitlab.example.com/api/v4/projects/<project_id>/packages/pypi/simple
+package-name==1.0.0
+```
+
+* Используя файл `~/.netrc`:
+
+```
+machine gitlab.example.com
+login __token__
+password <your_personal_token>
+```
 
 ## Исправление проблем
 
+Для повышения производительности команда **pip** кэширует файлы, связанные с пакетом. **Pip** не удаляет данные сам по себе. Кэш увеличивается по мере установки новых пакетов. Если у вас возникли проблемы, очистите кеш с помощью этой команды:
+
+```bash
+pip cache purge
+```
+
 ### Несколько параметров index-url или extra-index-url
 
+Вы можете определить несколько параметров `index-url` и `extra-index-url`.
+
+Если вы используете одно и то же доменное имя (например, `gitlab.example.com`) несколько раз с разными токенами аутентификации, **pip** может не найти ваши пакеты. Эта проблема связана с тем, как **pip** [регистрирует и хранит ваши токены](https://github.com/pypa/pip/pull/10904#issuecomment-1126690115) во время выполнения команд.
+
+Чтобы обойти эту проблему, вы можете использовать [токен группового развертывания](https://docs.gitlab.com/ee/user/project/deploy\_tokens/index.html) с областью действия **read\_package\_registry** из общей родительской группы для всех проектов или групп, на которые нацелены значения **index-url** и **extra-index-url**.
+
 ## Поддерживаемые команды CLI
+
+Репозиторий GitLab PyPI поддерживает следующие команды CLI:
+
+* `twine upload`: Загрузить пакет в реестр.
+* `pip install`: установите пакет PyPI из реестра.
