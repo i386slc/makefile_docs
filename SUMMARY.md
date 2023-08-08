@@ -42,4 +42,4 @@
     * [Релизы](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/relizy.md)
     * [Пакеты и реестры](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/README.md)
       * [Реестр пакетов](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-paketov/README.md)
-        * [PyP](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-paketov/pyp.md)
+        * [PyPI](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-paketov/pypi.md)
