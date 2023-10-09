@@ -7,7 +7,7 @@
 Чтобы включить реестр контейнеров для вашего экземпляра GitLab, см. <mark style="color:purple;">документацию администратора</mark>.
 
 {% hint style="info" %}
-Если вы извлекаете образы контейнеров Docker из Docker Hub, вы можете использовать [прокси-сервер зависимостей](proksi-zavisimostei.md) GitLab, чтобы избежать ограничений скорости и ускорить работу конвейеров. Дополнительную информацию о реестре Docker см. на странице [https://docs.docker.com/registry/introduction/](https://docs.docker.com/registry/introduction/).
+Если вы извлекаете образы контейнеров Docker из Docker Hub, вы можете использовать [прокси-сервер зависимостей](../proksi-zavisimostei.md) GitLab, чтобы избежать ограничений скорости и ускорить работу конвейеров. Дополнительную информацию о реестре Docker см. на странице [https://docs.docker.com/registry/introduction/](https://docs.docker.com/registry/introduction/).
 {% endhint %}
 
 ## Просмотр реестра контейнеров
@@ -49,7 +49,7 @@
    * проекта выберите **Deploy > Container Registry**.
 3. Найдите образ контейнера, с которым хотите работать, и выберите **Copy**.
 
-<figure><img src="../../../../.gitbook/assets/container_registry_hover_path_13_4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/container_registry_hover_path_13_4.png" alt=""><figcaption></figcaption></figure>
 
 4. Используйте `docker run` со скопированной ссылкой:
 
@@ -112,7 +112,7 @@ registry.example.com/mynamespace/myproject/my/image:rc1
 
 По умолчанию реестр контейнеров виден всем, у кого есть доступ к проекту. Однако вы можете изменить видимость реестра контейнеров для проекта.
 
-Дополнительные сведения о разрешениях, которые этот параметр предоставляет пользователям, см. в разделе [Разрешения на видимость реестра контейнеров](reestr-konteinerov.md#razresheniya-na-vidimost-reestra-konteinerov).
+Дополнительные сведения о разрешениях, которые этот параметр предоставляет пользователям, см. в разделе [Разрешения на видимость реестра контейнеров](./#razresheniya-na-vidimost-reestra-konteinerov).
 
 1. На левой боковой панели выберите **Search or go to** и найдите свой проект.
 2. Выберите **Settings > General**.
@@ -124,7 +124,7 @@ registry.example.com/mynamespace/myproject/my/image:rc1
 
 ## Разрешения на видимость реестра контейнеров
 
-Возможность просмотра реестра контейнеров и получения образов контейнеров контролируется разрешениями на видимость реестра контейнеров. Вы можете изменить видимость с помощью [настройки видимости в пользовательском интерфейсе](reestr-konteinerov.md#izmenenie-vidimosti-reestra-konteinerov) или <mark style="color:purple;">API</mark>. Этот параметр не влияет на <mark style="color:purple;">другие разрешения</mark>, такие как обновление реестра контейнеров, а также отправку или удаление образов контейнеров. Однако отключение реестра контейнеров отключает все операции с реестром контейнеров.
+Возможность просмотра реестра контейнеров и получения образов контейнеров контролируется разрешениями на видимость реестра контейнеров. Вы можете изменить видимость с помощью [настройки видимости в пользовательском интерфейсе](./#izmenenie-vidimosti-reestra-konteinerov) или <mark style="color:purple;">API</mark>. Этот параметр не влияет на <mark style="color:purple;">другие разрешения</mark>, такие как обновление реестра контейнеров, а также отправку или удаление образов контейнеров. Однако отключение реестра контейнеров отключает все операции с реестром контейнеров.
 
 <table><thead><tr><th width="257"></th><th width="160"></th><th width="114">Anonymous (Everyone on internet)</th><th>Guest</th><th>Reporter, Developer, Maintainer, Owner</th></tr></thead><tbody><tr><td>Публичный проект с видимостью реестра контейнеров установлено значение <strong>Everyone With Access</strong> (UI) или <code>enabled</code> (API).</td><td>Просмотр реестра контейнеров и затягивание образа</td><td>Да</td><td>Да</td><td>Да</td></tr><tr><td>Публичный проект с видимостью реестра контейнеров установлено значение <strong>Only Project Members</strong> (UI) или <code>private</code> (API).</td><td>Просмотр реестра контейнеров и затягивание образа</td><td>Нет</td><td>Нет</td><td>Да</td></tr><tr><td>Внутренний проект с видимостью реестра контейнеров, установлено значение <strong>Everyone With Access</strong> (UI) или <code>enabled</code> (API).</td><td>Просмотр реестра контейнеров и затягивание образа</td><td>Нет</td><td>Да</td><td>Да</td></tr><tr><td>Внутренний проект с видимостью реестра контейнеров установлено значение <strong>Only Project Members</strong> (UI) или <code>private</code> (API).</td><td>Просмотр реестра контейнеров и затягивание образа</td><td>Нет</td><td>Нет</td><td>Да</td></tr><tr><td>Частный проект с видимостью реестра контейнеров, установлено значение <strong>Everyone With Access</strong> (UI) или <code>enabled</code> (API).</td><td>Просмотр реестра контейнеров и затягивание образа</td><td>Нет</td><td>Нет</td><td>Да</td></tr><tr><td>Частный проект с видимостью реестра контейнеров установлено значение <strong>Only Project Members</strong> (UI) или <code>private</code> (API).</td><td>Просмотр реестра контейнеров и затягивание образа</td><td>Нет</td><td>Нет</td><td>Да</td></tr><tr><td>Любой проект с отключенным реестром <code>disabled</code>.</td><td>Все операции с реестром контейнеров</td><td>Нет</td><td>Нет</td><td>Нет</td></tr></tbody></table>
 
