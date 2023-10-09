@@ -57,6 +57,7 @@
         * [Аутентификация](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-konteinerov/autentifikaciya.md)
         * [build и push образов](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-konteinerov/build-i-push-obrazov.md)
         * [Удаление образов](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-konteinerov/udalenie-obrazov.md)
+        * [Уменьшение хранилища реестра контейнеров](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-konteinerov/umenshenie-khranilisha-reestra-konteinerov.md)
       * [Реестр Harbor](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-harbor.md)
       * [Реестр модулей Terraform](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-modulei-terraform.md)
       * [Прокси зависимостей](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/proksi-zavisimostei.md)
