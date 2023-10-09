@@ -55,6 +55,7 @@
         * [PyPI](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-paketov/pypi.md)
       * [Реестр контейнеров](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-konteinerov/README.md)
         * [Аутентификация](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-konteinerov/autentifikaciya.md)
+        * [build и push образо](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-konteinerov/build-i-push-obrazo.md)
       * [Реестр Harbor](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-harbor.md)
       * [Реестр модулей Terraform](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/reestr-modulei-terraform.md)
       * [Прокси зависимостей](gitlab/ispolzovanie-gitlab/razvertyvanie-i-vypusk-prilozheniya/pakety-i-reestry/proksi-zavisimostei.md)
